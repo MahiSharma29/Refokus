@@ -9,12 +9,12 @@ function Footer(){
         <div className="basis-1/2 flex gap-4">
         <div className="basis-1/3 ">
           <h4 className="mb-7 text-zinc-500 Capitalize">Socials</h4>
-         { ["Instagram", "Twitter (X?)", "LinkedIn"].map((item, index)=><a className="block mt-2 text-captalize
+         { ["Instagram", "Twitter (X?)", "LinkedIn"].map((item, index)=><a key={index} className="block mt-2 text-captalize
           text-zinc-600">{item}</a>)}
         </div>
         <div className="basis-1/3">
         <h4 className="mb-7 text-zinc-500 Capitalize">Socials</h4>
-         { ["Instagram", "Twitter (X?)", "LinkedIn"].map((item, index)=><a className="block mt-2 text-captalize
+         { ["Instagram", "Twitter (X?)", "LinkedIn"].map((item, index)=><a key={index} className="block mt-2 text-captalize
           text-zinc-600">{item}</a>)}
         </div>
         <div className="basis-1/2 flex flex-col items-end">
