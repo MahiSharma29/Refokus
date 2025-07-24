@@ -1,14 +1,21 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
-function Card({width, start, para, hover}){
+function Card({width, start, para, hover="false"}){
+  const data =[
+        {heading:"Up Next:News",secondheading:"Insights and behind the scenes"},
+        {heading:"Get in Touch",secondheading:"Let's get to it,together"}
+    ]
   return (
-    <div className={` bg-zinc-800 hover:${hover} p-5 rounded-xl ${width} min-h-[30rem] flex flex-col justify-between`}>
+    <motion.div whileHover={{backgroundColor:hover==="true"&& "#7443ff", padding: "25px"}} className={` bg-zinc-800  p-5 rounded-xl ${width} min-h-[30rem] flex flex-col justify-between`}>
      <div className="w-full">
        <div className="w-full flex justify-betwen items-center">
-        <h3>Up Next: Culture</h3>
+         {start && <h3 className=''>{data[1].heading}</h3>}
+        {!start && <h3 className=''>{data[0].heading}</h3>}
         <IoIosArrowRoundForward/>
       </div>
-      <h1 className="text-3xl font-medium mt-5">Get In Touch</h1>
+      {start && <h3 className='text-3xl font-medium mt-5'>{data[1].secondheading}</h3>}
+{!start && <h3 className='text-3xl font-medium mt-5'>{data[0].secondheading}</h3>} 
      </div>
      <div className="down w-full">
       {
@@ -21,12 +28,12 @@ function Card({width, start, para, hover}){
       }
       {
         para && (
-          <p className="text-sm text-zinc-700 font-medium">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+          <p className="text-sm text-zinc-700 font-medium"></p>
         )
       }
       
      </div>
-    </div>
+    </motion.div>
   )
 }
 
