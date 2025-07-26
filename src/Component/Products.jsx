@@ -3,29 +3,29 @@ import Product from "./Product";
 import { motion } from "framer-motion";
 
 function Products(){
-  var products = [
-    {title: "Arqitel", description: "", live: true , case: false},
-    {title: "Cula", description: "", live: true , case: false},
-    {title: "TTR", description: "", live: true , case: false},
-    {title: "Maniv", description: "", live: true , case: false},
-    {title: "YIR", description: "", live: true , case: false},
-    {title: "Yahoo!", description: "", live: true , case: true},
-    {title: "Rainfall", description: "", live: true , case: true},
-    {title: "Jungle", description: "", live: true , case: true},
-    {title: "Silvr", description: "", live: true , case: false},
-    {title: "Remind", description: "", live: true , case: true},
-    {title: "Summon", description: "", live: true , case: true},
-    {title: "Magic", description: "", live: true , case: true},
-    {title: "RocketChat", description: "", live: true , case: false},
-    {title: "Haufe", description: "", live: true , case: false},
-    {title: "YIR 2022", description: "", live: true , case: false},
-    {title: "Weglot", description: "", live: true , case: false},
-    {title: "Candid", description: "", live: true , case: false},
-    {title: "Showcase", description: "", live: true , case: false}
-  ];
+  const products =[
+        {title:"Arqitel",description:"With a continuous 3D animation, we showcase Arqitel approach and show how migration data translates into real estate.",live:true,case:false},
+        {title:"Cula",description:"We immersed ourselves in a 3D world we created to explain how Cula's platform collects data from carbon removal processes and converts them into carbon credit certificates.",live:true,case:false},
+        {title:"TTR",description:"We've created an interactive site using generative AI to allow users to engage with our thinking about Ai, industry trends and design.",live:true,case:false},
+        {title:"Maniv",description:"A global early-stage venture fund partnering with founders to advance cleaner, safer, and more sustainable movement of people and goods.",live:true,case:false},
+        {title:"YIR",description:"Our second year was filled with great events, exciting projects, awards and amazing people - so we made another showcase to celebrate.",live:true,case:false},
+        {title:"Yahoo!",description:"We enhanced the New York Fashion Week, by creating a fully digital AR fashion experience for Yahoo and Maisie Wilen, featuring holographic 3D models and an integrated web shop.",live:true,case:true},
+        {title:"Rainfall",description:"We crafted a website for Rainfall Ventures, developing prototypes and custom code that ultimately allows their team to update content regularly and with ease.",live:true,case:true},
+        {title:"Jungle",description:"We crafted a timeless visual system for Jungle Ventures, covering all aspects of web design, and empowered their marketing team to scale organically using Webflow.",live:true,case:true},
+        {title:"Silvr",description:"We teamed up with financing solutions provider Silvr to audit, refine and evolve their brand.",live:true,case:false},
+        {title:"Remind",description:"Remind got a new website that is designed and developed to be easy to maintain and ready to learn, reflecting their mission to connect students and families.",live:true,case:true},
+        {title:"Summon",description:"We created a website for Summon that showcases their innovative technology through animated and captivating UI components and emerging technologies.",live:true,case:true},
+        {title:"Magic",description:"We designed and developed a magical gaming experience made in Webflow to promote the translation service and their sponsorship of the 2022 Webflow Conference.",live:true,case:true},
+        {title:"RocketChat",description:"We built a beautiful, clean website in Webflow for RocketChat that is scalable, easy to maintain and built in a modular manner for future changes.",live:true,case:false},
+        {title:"Haufe",description:"Besides the continuous work we do with Haufe—shipping over 50 projects per year—we partnered with them to create a new website for their core brand.",live:true,case:false},
+        {title:"YIR 2021",description:"We celebrated our first year with a Showcase Website that reflects on a year of growth, building an awesome team & culture, defining our brand, and more.",live:true,case:false},
+        {title:"Weglot",description:"We made a fun and engaging showcase website for our friends from Weglot to promote their no-code translation solution in Germany.",live:true,case:false},
+        {title:"Candid ",description:"A complete redesign of a health-startup website, followed by cutting edge development.",live:true,case:false},
+        {title:"Showcase",description:"Our OMR22 Masterclass teaches how to create a showcase website, and we made a showcase website about showcase websites to promote the art of showcasing.",live:true,case:false},
+    ]
   
   let material =[
-       {video:"https://cdn.refokus.com/website/Arqitel/Arqitel%20project%20video%204_3.webm",background:"https://assets-global.website-files.com/6334198f239547f2fccd84c1/650c621a3aa0ee3ae147d692_arqitel-bg-p-2000.webp"},
+      {video:"https://cdn.refokus.com/website/Arqitel/Arqitel%20project%20video%204_3.webm",background:"https://assets-global.website-files.com/6334198f239547f2fccd84c1/650c621a3aa0ee3ae147d692_arqitel-bg-p-2000.webp"},
       {video:"https://cdn.refokus.com/website/Cula_promo_new_4_3.mp4",background:"https://assets-global.website-files.com/6334198f239547f2fccd84c1/65b41319bda140bccae204ae_bg%202.png"},
       {video:"https://cdn.refokus.com/website/TTR/TTR%20project%20video%204_3_H.264.webm",background:"https://assets-global.website-files.com/6334198f239547f2fccd84c1/635299ec9a478d08095a0122_Rainfall%20bg-p-1600.png"},
       {video:"https://cdn.refokus.com/website/Maniv-Compressed.mp4",background:"https://assets-global.website-files.com/6334198f239547f2fccd84c1/65b2ccf5af18668cfbd3a8d6_bg%201-p-1600.png"},
@@ -54,7 +54,7 @@ function Products(){
   return (
     <div className='relative mt-5 '>
         {products.map((val, index) => ( 
-        <Product mover={mover} index={index} key={index} val={val} background={material[index].background} />))}
+        <Product mover={mover} index={index} key={index} val={val} video={material[index].video} background={material[index].background} />))}
         <div className=" w-full h-full hidden sm:block  absolute top-0 pointer-events-none">
             <motion.div initial={{y:pos, x:"30%"}} animate={{y:pos+`rem`}} transition={{ease:[0.76, 0, 0.24, 1],duration:.6}} className=" rounded-xl w-[30rem] h-[23rem] absolute left-32 overflow-hidden ml-20">
               {material.map((elem,key)=>(
